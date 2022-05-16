@@ -19,7 +19,7 @@ const EachProject = (props: any) => {
       </div>
       <div className={classes.divWrap}>
         {peronsal?.map((item: any, index: number) => (
-          <div id={item.id} className={classes.eachProject}>
+          <div key={item.id} className={classes.eachProject}>
             <div className={classes.divTitle}>
               <h3 className={classes.title}>{item.name}</h3>
             </div>
@@ -55,7 +55,7 @@ const EachProject = (props: any) => {
       </div>
       <div className={classes.divWrap}>
         {work?.map((item: any, index: number) => (
-          <div id={item.id} className={classes.eachProject}>
+          <div key={item.id} className={classes.eachProject}>
             <div className={classes.divTitle}>
               <h3 className={classes.title}>{item.name}</h3>
             </div>
@@ -90,6 +90,9 @@ const useStyles = makeStyles({
     height: "fit-content",
     alignItems: "center",
     justifyContent: "center",
+    "@media (max-width: 1024px)": {
+      width: "100%",
+    },
   },
   divSubtitle: {
     display: "flex",
@@ -112,6 +115,11 @@ const useStyles = makeStyles({
     width: "90%",
     height: "fit-content",
     flexWrap: "wrap",
+    "@media (max-width: 1024px)": {
+      width: "100%",
+      flexDirection: "column",
+      flexWrap: "nowrap",
+    },
   },
   eachProject: {
     display: "flex",
@@ -128,6 +136,10 @@ const useStyles = makeStyles({
     borderRadius: "10px",
     padding: "1rem",
     marginTop: "3rem",
+    "@media (max-width: 1024px)": {
+      width: "90%",
+      marginRight: 0,
+    },
   },
   divTitle: {
     display: "flex",

@@ -53,12 +53,18 @@ export const useStyles = makeStyles({
     height: "fit-content",
     alignItems: "center",
     justifyContent: "center",
+    "@media (max-width: 1024px)": {
+      width: "100%",
+    },
   },
   divName: {
     display: "flex",
     width: "90%",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    "@media (max-width: 1024px)": {
+      width: "100%",
+    },
   },
   name: {
     textDecoration: "none",
@@ -78,6 +84,10 @@ export const useStyles = makeStyles({
     justifyContent: "center",
     marginTop: "2vh",
     marginBottom: "2vh",
+    "@media (max-width: 1024px)": {
+      width: "100%",
+      flexDirection: "column",
+    },
   },
   divImage: {
     display: "flex",
@@ -85,6 +95,9 @@ export const useStyles = makeStyles({
     height: "fit-content",
     alignItems: "center",
     justifyContent: "center",
+    "@media (max-width: 1024px)": {
+      width: "90%",
+    },
   },
   image: {
     width: "11rem",
@@ -100,6 +113,12 @@ export const useStyles = makeStyles({
     marginLeft: "2rem",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    "@media (max-width: 1024px)": {
+      width: "90%",
+      margin: 0,
+      marginTop: "2vh",
+      marginBottom: "2vh",
+    },
   },
   quote: {
     width: "2vw",

@@ -15,12 +15,6 @@ const Titles = (props: any) => {
 };
 
 const useStyles = makeStyles({
-  root: {
-    display: "flex",
-    width: "50%",
-    alignItems: "center",
-    justifyContent: "flex-start",
-  },
   title: {
     margin: 0,
     marginTop: "4vh",

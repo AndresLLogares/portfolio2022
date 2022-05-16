@@ -90,6 +90,10 @@ const useStyles = makeStyles({
     width: "90%",
     height: "fit-content",
     flexWrap: "wrap",
+    "@media (max-width: 1024px)": {
+      flexDirection: "column",
+      flexWrap: "none",
+    },
   },
   button: {
     display: "flex",
@@ -116,6 +120,10 @@ const useStyles = makeStyles({
       border: `none`,
       transform: "translate(20px, 20px)",
       cursor: "pointer",
+    },
+    "@media (max-width: 1024px)": {
+      marginRight: "0rem",
+      marginBottom: "3rem",
     },
   },
   logo: {

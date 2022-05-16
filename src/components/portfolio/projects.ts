@@ -1,4 +1,4 @@
-import Nextlingo from '../../assets/portfolio/NextLingo.png';
+import Nextlingo from '../../assets/portfolio/NextLingo.webp';
 import Fairview from '../../assets/portfolio/Fairview.svg';
 import Nile from '../../assets/portfolio/Nile.svg';
 export const projects = [

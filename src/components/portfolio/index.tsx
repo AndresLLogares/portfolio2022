@@ -9,7 +9,9 @@ export const Portfolio = (props: any) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div 
+    id="Portfolio"
+    className={classes.root}>
       <div className={classes.divSort}>
         <Titles title="Portfolio" color="Black" />
       </div>
@@ -26,7 +28,6 @@ export const useStyles = makeStyles({
     width: "100%",
     flexDirection: "column",
     height: "fit-content",
-    minHeight: "100vh",
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: `${Colors.White}`,
@@ -37,6 +38,9 @@ export const useStyles = makeStyles({
     width: "60%",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    "@media (max-width: 1024px)": {
+      width: "90%",
+    },
   },
 });
 

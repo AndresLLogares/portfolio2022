@@ -26,7 +26,6 @@ export const useStyles = makeStyles({
     width: "100%",
     flexDirection: "column",
     height: "fit-content",
-    minHeight: "100vh",
     alignItems: "center",
     justifyContent: "flex-start",
     backgroundColor: `${Colors.Black}`,
@@ -37,6 +36,10 @@ export const useStyles = makeStyles({
     width: "60%",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    marginBottom: "4vh",
+    "@media (max-width: 1024px)": {
+      width: "90%",
+    },
   },
 });
 

@@ -1,4 +1,4 @@
-import CarlosImage from "../../assets/images/carlos.jpeg";
+import CarlosImage from "../../assets/images/carlos.webp";
 
 export const Carlos = {
   name: "Carlos Benetti",

@@ -1,19 +1,21 @@
 import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import { Colors } from "../../colors/colors";
-import background from "../../assets/images/backgroundopacity.png";
+import background from "../../assets/images/backgroundopacity.webp";
 
 const Main = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div
+      id="Home"
+      className={classes.root}>
       <div className={classes.background} />
       <div className={classes.content}>
         <h1 className={classes.title}>Andrés Luis Logares</h1>
         <h2 className={classes.subTitle}>Software Developer</h2>
       </div>
-    <div className={classes.divAbout}>
+      <div className={classes.divAbout}>
         <p className={classes.textAbout}>
           I am passionate about development, trying to improve my work and my
           skills every day, always with curiosity and impetus looking for
@@ -21,7 +23,7 @@ const Main = () => {
           eternal path of study that is to be a developer, while also learning
           from my peers and helping other team members.
         </p>
-      </div>    
+      </div>
     </div>
   );
 };
@@ -30,19 +32,6 @@ const useStyles = makeStyles({
   "@keyframes bg-scrolling": {
     "0%": { transform: `translateY(0)` },
     "100%": { transform: `translateY(-10%)` },
-  },
-  "@keyframes text-pop-up-top": {
-    "0%": {
-      transform: `translateY(0)`,
-      textShadow: `none`,
-    },
-    "100%": {
-      transform: `translateY(-50px)`,
-      textShadow: `0px 3px 0px #b2a98f,
-      0px 14px 10px rgba(0,0,0,0.15),
-      0px 24px 2px rgba(0,0,0,0.1),
-      0px 34px 30px rgba(0,0,0,0.1);`,
-    },
   },
   "@keyframes text-spacing": {
     "0%": {
@@ -69,10 +58,6 @@ const useStyles = makeStyles({
     justifyContent: "center",
     backgroundColor: `${Colors.White}`,
   },
-  Zoom: {
-    display: "flex",
-    width: "fit-content",
-  },
   background: {
     width: "100%",
     height: "110vh",
@@ -88,6 +73,9 @@ const useStyles = makeStyles({
     animation: "$bg-scrolling 5s linear infinite",
     animationTimeline: "linear",
     zIndex: 0,
+    "@media (max-width: 1024px)": {
+      
+    },
   },
   content: {
     display: "flex",
@@ -97,6 +85,7 @@ const useStyles = makeStyles({
     width: "100%",
     height: "fit-content",
     marginTop: "15vh",
+    textAlign: "center",
   },
   title: {
     margin: 0,
@@ -105,6 +94,9 @@ const useStyles = makeStyles({
     fontSize: "10vh",
     color: `${Colors.Black}`,
     animation: `$text-spacing  3s cubic-bezier(0.215, 0.610, 0.355, 1.000) both`,
+    "@media (max-width: 1024px)": {
+      fontSize: "4.5vh",
+    },
   },
   subTitle: {
     margin: 0,
@@ -112,6 +104,9 @@ const useStyles = makeStyles({
     fontSize: "10vh",
     color: `${Colors.Black}`,
     animation: `$text-spacing  3s cubic-bezier(0.215, 0.610, 0.355, 1.000) both`,
+    "@media (max-width: 1024px)": {
+      fontSize: "4.5vh",
+    },
   },
   divAbout: {
     display: "flex",
@@ -126,6 +121,12 @@ const useStyles = makeStyles({
     padding: "2vw",
     borderRadius: "10px",
     boxShadow: "0px 0px 30px 0px rgba(0,0,0,0.5)",
+    "@media (max-width: 1024px)": {
+      textAlign: "center",
+      width: "90%",
+      marginTop: "7vh",
+      marginBottom: "5vh",
+    },
   },
   textAbout: {
     display: "flex",
@@ -133,6 +134,9 @@ const useStyles = makeStyles({
     fontFamily: ["IBM Plex Sans Thai Looped", "sans-serif"].join(","),
     fontSize: "3vh",
     fontWeight: "bold",
+    "@media (max-width: 1024px)": {
+      fontSize: "2.5vh",
+    },
   },
 });
 
