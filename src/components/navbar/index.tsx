@@ -8,6 +8,10 @@ import DropDown from "./dropDown";
 import Logo from "../../assets/images/logo.svg";
 import { Menu } from "@styled-icons/entypo/Menu";
 import { Close } from "@styled-icons/evil/Close";
+import Spain from "../../assets/images/spain.svg";
+import English from "../../assets/images/english.svg";
+import { useTranslation } from "react-i18next";
+
 const Navbar = () => {
   const classes = useStyles();
 
@@ -17,12 +21,39 @@ const Navbar = () => {
 
   const [fixDrop, setFixDrop] = React.useState(false);
 
+  const [language, setLanguage] = React.useState(English);
+
+  const { t } = useTranslation();
+
   const { width } = useWindowSize();
+
+  const { i18n } = useTranslation("global");
 
   const handleDrop = () => {
     setDropOpen(!dropOpen);
     setFixDrop(!fixDrop);
   };
+
+  const changeLanguage = () => {
+    if (i18n.language === "en") {
+      i18n.changeLanguage("sp");
+      setLanguage(Spain);
+      localStorage.setItem("language", "sp");
+    } else {
+      i18n.changeLanguage("en");
+      setLanguage(English);
+      localStorage.setItem("language", "en");
+    }
+  };
+
+  React.useEffect(() => {
+    if (localStorage.getItem("language") === "en") {
+      setLanguage(English);
+    }
+    else {
+      setLanguage(Spain);
+    }
+  }, [])
 
   React.useEffect(() => {
     if (width < 1024) {
@@ -35,54 +66,42 @@ const Navbar = () => {
     <AppBar className={scroll === 0 ? classes.transparent : classes.appBar}>
       {width > 1200 ? (
         <Toolbar className={classes.toolbar}>
-          <a className={classes.button}
-            rel="noreferrer"
-            href="#Home"
-          >
-            Home
+          <a className={classes.button} rel="noreferrer" href="#Home">
+            {t("global:Navbar.Home")}
           </a>
-          <a className={classes.button}
-            rel="noreferrer"
-            href="#Portfolio"
-          >
-            Portfolio
+          <a className={classes.button} rel="noreferrer" href="#Portfolio">
+            {t("global:Navbar.Portfolio")}
           </a>
-          <a className={classes.button}
+          <a
+            className={classes.button}
             rel="noreferrer"
             target="_blank"
             href="https://drive.google.com/file/d/1jkP_jCG66JDquoF5S_2Xm7YdkRo0C2gz/view?usp=sharing"
           >
-            Resume
+            {t("global:Navbar.Resume")}
           </a>
-        </Toolbar>) :
-        (
-          <Toolbar className={classes.toolbarResponsive}>
-            <a className={classes.logo}
-              rel="noreferrer"
-              href="#Home"
-            >
-              <img src={Logo} alt="logo" className={classes.logoIcon} />
-            </a>
-            {fixDrop ? (
-              <button
-                onClick={handleDrop}
-                className={classes.button}
-              >
-                <Close className={classes.logoIcon} />
-              </button>
-            ) : (
-              <button
-                onClick={handleDrop}
-                className={classes.button}>
-                <Menu className={classes.logoIcon} onClick={handleDrop} />
-              </button>
-            )}
-          </Toolbar>
-        )}
-      {width > 1200 ? (
-        null) : (
-        <DropDown dropOpen={dropOpen} />
+          <button onClick={changeLanguage} className={classes.button}>
+            <img src={language} alt="english" className={classes.flags} />
+          </button>
+        </Toolbar>
+      ) : (
+        <Toolbar className={classes.toolbarResponsive}>
+          <a className={classes.logo} rel="noreferrer" href="#Home">
+            <img src={Logo} alt="logo" className={classes.logoIcon} />
+          </a>
+
+          {fixDrop ? (
+            <button onClick={handleDrop} className={classes.button}>
+              <Close className={classes.logoIcon} />
+            </button>
+          ) : (
+            <button onClick={handleDrop} className={classes.button}>
+              <Menu className={classes.logoIcon} onClick={handleDrop} />
+            </button>
+          )}
+        </Toolbar>
       )}
+      {width > 1200 ? null : <DropDown dropOpen={dropOpen} />}
     </AppBar>
   );
 };
@@ -169,6 +188,10 @@ const useStyles = makeStyles({
     height: "3rem",
     color: `${Colors.Black} !important`,
     borderRadius: "10px",
+  },
+  flags: {
+    width: "3rem",
+    height: "3rem",
   },
 });
 

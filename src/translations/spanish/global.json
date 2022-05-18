@@ -1,0 +1,31 @@
+{
+  "Navbar": {
+    "Home": "Inicio",
+    "Portfolio": "Portfolio ",
+    "Resume": "Curriculum"
+  },
+  "Titles": {
+    "Technologies": "Tecnologías",
+    "Portfolio": "Portfolio ",
+    "Contact": "Contáctame",
+    "Recommendations": "Recomendaciones"
+  },
+  "About": {
+    "text": "Un apasionado del desarrollo, tratando de mejorar mis trabajos y capacidades cada día, siempre con mucha curiosidad y ímpetu buscando soluciones a los problemas que se presenten y aprendiendo cosas nuevas en este camino eterno de estudio que implica el ser desarrollador, mientras también aprendo de mis compañeros y ayudo a los demás miembros del equipo."
+  },
+  "Recommendations": {
+    "text": "Andrés es increíble en su trabajo. Sabe desenvolverse entre la gente y hace lo que sea necesario para ayudar a sus compañeros. Su experiencia como desarrollador es considerable y ayudó a nuestro equipo a encontrar soluciones más eficientes y a desarrollar diferentes proyectos. Andrés se convertiría en un miembro apreciado de cualquier equipo."
+  },
+  "Portfolio": {
+    "Personal": "Projectos Personales",
+    "Professional": "Projectos Profesionales",
+    "Live": "Ver"
+  },
+  "Label": {
+    "name": "Nombre",
+    "email": "Email",
+    "message": "Mensaje",
+    "placeholder": "Su mensaje",
+    "send": "Enviar"
+  }
+}

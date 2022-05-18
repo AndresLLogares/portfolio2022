@@ -2,9 +2,11 @@ import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import { Colors } from "../../colors/colors";
 import background from "../../assets/images/backgroundopacity.webp";
+import { useTranslation } from "react-i18next";
 
 const Main = () => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div
@@ -17,11 +19,7 @@ const Main = () => {
       </div>
       <div className={classes.divAbout}>
         <p className={classes.textAbout}>
-          I am passionate about development, trying to improve my work and my
-          skills every day, always with curiosity and impetus looking for
-          solutions to the problems that arise and learning new things in this
-          eternal path of study that is to be a developer, while also learning
-          from my peers and helping other team members.
+        {t("global:About.text")}
         </p>
       </div>
     </div>

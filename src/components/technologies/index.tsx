@@ -3,17 +3,19 @@ import { makeStyles } from "@mui/styles";
 import { Colors } from "../../colors/colors";
 import Titles from "../titles";
 import EachTechnology from "../eachTechnology";
+import { useTranslation } from "react-i18next";
 
 export const Technologies = (props: any) => {
   const classes = useStyles();
+  const { t } = useTranslation("global");
 
   return (
     <div className={classes.root}>
       <div className={classes.divSort}>
-        <Titles title="Technologies" color="White" />
+        <Titles title={t("global:Titles.Technologies")} color="White" />
       </div>
       <div className={classes.divSort}>
-        <EachTechnology/>
+        <EachTechnology />
       </div>
     </div>
   );

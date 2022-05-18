@@ -1,9 +1,39 @@
 import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import { Colors } from "../../colors/colors";
-
+import Spain from "../../assets/images/spain.svg";
+import English from "../../assets/images/english.svg";
+import { useTranslation } from "react-i18next";
 const DropDown = (props: any) => {
+
+    const [language, setLanguage] = React.useState(English);
+
+    const { t } = useTranslation();
+
+    const { i18n } = useTranslation("global");
+
+    const changeLanguage = () => {
+        if (i18n.language === "en") {
+            i18n.changeLanguage("sp");
+            setLanguage(Spain);
+            localStorage.setItem("language", "sp");
+        } else {
+            i18n.changeLanguage("en");
+            setLanguage(English);
+            localStorage.setItem("language", "en");
+        }
+    };
+
     const classes = useStyles();
+
+    React.useEffect(() => {
+        if (localStorage.getItem("language") === "en") {
+            setLanguage(English);
+        }
+        else {
+            setLanguage(Spain);
+        }
+    }, [])
 
     return (
         <div className={props.dropOpen ? classes.root : classes.rootNone}>
@@ -11,21 +41,24 @@ const DropDown = (props: any) => {
                 rel="noreferrer"
                 href="#Home"
             >
-                Home
+                {t("global:Navbar.Home")}
             </a>
             <a className={classes.button}
                 rel="noreferrer"
                 href="#Portfolio"
             >
-                Portfolio
+                {t("global:Navbar.Portfolio")}
             </a>
             <a className={classes.button}
                 rel="noreferrer"
                 target="_blank"
                 href="https://drive.google.com/file/d/1jkP_jCG66JDquoF5S_2Xm7YdkRo0C2gz/view?usp=sharing"
             >
-                Resume
+                {t("global:Navbar.Resume")}
             </a>
+            <button onClick={changeLanguage} className={classes.button}>
+                <img src={language} alt="english" className={classes.flags} />
+            </button>
         </div>
 
     )
@@ -120,6 +153,10 @@ const useStyles = makeStyles({
             backgroundColor: `${Colors.Blue} !important`,
             color: `${Colors.Black} !important`,
         },
+    },
+    flags: {
+        width: "1.5rem",
+        height: "1.5rem",
     },
 })
 export default DropDown;

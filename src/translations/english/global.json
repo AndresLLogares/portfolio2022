@@ -1,0 +1,31 @@
+{
+  "Navbar": {
+    "Home": "Home",
+    "Portfolio": "Portfolio ",
+    "Resume": "Resume"
+  },
+  "Titles": {
+    "Technologies": "Technologies",
+    "Portfolio": "Portfolio ",
+    "Contact": "Contact Me",
+    "Recommendations": "Recommendations"
+  },
+  "About": {
+    "text": "I am passionate about development, trying to improve my work and my skills every day, always with curiosity and impetus looking for solutions to the problems that arise and learning new things in this eternal path of study that is to be a developer, while also learning from my peers and helping other team members."
+  },
+  "Recommendations": {
+    "text": "Andrés is amazing at his job! He knows his way around people, does whatever it takes to help colleagues. His expertise as developer is considerable and it helped our team to come up with more efficient solutions and develop different projects. Andrés would become an appreciated member of any team."
+  },
+  "Portfolio": {
+    "Personal": "Personal Projects",
+    "Professional": "Professional Projects",
+    "Live": "Live"
+  },
+  "Label": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "placeholder": "Your message",
+    "send": "Send"
+  }
+}

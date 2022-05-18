@@ -4,14 +4,16 @@ import { Colors } from "../../colors/colors";
 import EachRecommendation from "../eachRecommendation";
 import Titles from "../titles";
 import { Carlos } from "./list";
+import { useTranslation } from "react-i18next";
 
 export const Recommendations = (props: any) => {
   const classes = useStyles();
+  const { t } = useTranslation();
 
   return (
     <div className={classes.root}>
       <div className={classes.divSort}>
-        <Titles title="Recommendations" color="White" />
+        <Titles title={t("global:Titles.Recommendations")}  color="White" />
       </div>
       <div className={classes.divSort}>
         <EachRecommendation recommendation={Carlos} />

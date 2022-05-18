@@ -3,14 +3,16 @@ import { makeStyles } from "@mui/styles";
 import { Colors } from "../../colors/colors";
 import Titles from "../titles";
 import EachSocial from "../eachSocial";
+import { useTranslation } from "react-i18next";
 
 export const ContactMe = (props: any) => {
   const classes = useStyles();
+  const { t } = useTranslation("global");
 
   return (
     <div className={classes.root}>
       <div className={classes.divSort}>
-        <Titles title="Contact Me" color="Black" />
+        <Titles title={t("global:Titles.Recommendations")} color="Black" />
       </div>
       <div className={classes.divSort}>
         <EachSocial />

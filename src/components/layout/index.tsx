@@ -7,7 +7,7 @@ const Layout = (props: any) => {
 
   return (
     <div className={classes.main}>
-      <Navbar/>
+      <Navbar />
       {props.children}
     </div>
   );

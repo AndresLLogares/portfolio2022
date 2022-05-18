@@ -1,8 +1,12 @@
 import * as React from "react";
 import { makeStyles } from "@mui/styles";
 import { Colors } from "../../colors/colors";
+import { useTranslation } from "react-i18next";
+
 const EachProject = (props: any) => {
   const classes = useStyles();
+  const { t } = useTranslation();
+  const { i18n } = useTranslation("global");
 
   const peronsal = props.projects.filter((item: any) => {
     return item.type === "personal";
@@ -15,7 +19,7 @@ const EachProject = (props: any) => {
   return (
     <div className={classes.root}>
       <div className={classes.divSubtitle}>
-        <h1 className={classes.subtitle}>Personal Projects</h1>
+        <h1 className={classes.subtitle}>{t("global:Portfolio.Personal")}</h1>
       </div>
       <div className={classes.divWrap}>
         {peronsal?.map((item: any, index: number) => (
@@ -27,7 +31,9 @@ const EachProject = (props: any) => {
               <img className={classes.img} src={item.image} alt="img" />
             </div>
             <div className={classes.divDescription}>
-              <p className={classes.description}>{item.description}</p>
+              <p className={classes.description}>
+                {i18n.language === "en" ? item.description : item.spanish}
+              </p>
             </div>
             <div className={classes.divLinks}>
               <a
@@ -44,14 +50,16 @@ const EachProject = (props: any) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Live
+                {t("global:Portfolio.Live")}
               </a>
             </div>
           </div>
         ))}
       </div>
       <div className={classes.divSubtitle}>
-        <h1 className={classes.subtitle}>Professional Projects</h1>
+        <h1 className={classes.subtitle}>
+          {t("global:Portfolio.Professional")}
+        </h1>
       </div>
       <div className={classes.divWrap}>
         {work?.map((item: any, index: number) => (
@@ -63,7 +71,9 @@ const EachProject = (props: any) => {
               <img className={classes.img} src={item.image} alt="img" />
             </div>
             <div className={classes.divDescription}>
-              <p className={classes.description}>{item.description}</p>
+              <p className={classes.description}>
+                {i18n.language === "en" ? item.description : item.spanish}
+              </p>
             </div>
             <div className={classes.divLinks}>
               <a
@@ -72,7 +82,7 @@ const EachProject = (props: any) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Live
+                {t("global:Portfolio.Live")}
               </a>
             </div>
           </div>

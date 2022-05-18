@@ -3,9 +3,11 @@ import { makeStyles } from "@mui/styles";
 import { Colors } from "../../colors/colors";
 import { QuoteAltLeft } from "@styled-icons/boxicons-solid/QuoteAltLeft";
 import { QuoteAltRight } from "@styled-icons/boxicons-solid/QuoteAltRight";
+import { useTranslation } from "react-i18next";
 
 export const EachRecommendation = (props: any) => {
   const classes = useStyles();
+  const { i18n } = useTranslation("global");
 
   return (
     <div className={classes.root}>
@@ -33,7 +35,7 @@ export const EachRecommendation = (props: any) => {
           </div>
           <div className={classes.divQuoteText}>
             <p className={classes.quoteText}>
-              {props.recommendation.recommendation}
+              {i18n.language === "en" ? props.recommendation.english : props.recommendation.spanish}
             </p>
           </div>
           <div className={classes.divQuoteRight}>
