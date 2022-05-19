@@ -22,6 +22,9 @@ const useStyles = makeStyles({
     fontFamily: ["Aldrich", "sans-serif"].join(","),
     fontSize: "5vh",
     color: `${Colors.Black}`,
+    "@media (max-width: 1024px)": {
+      fontSize: "4vh",
+    },
   },
   titleWhite: {
     margin: 0,
@@ -30,6 +33,9 @@ const useStyles = makeStyles({
     fontFamily: ["Trispace", "sans-serif"].join(","),
     fontSize: "5vh",
     color: `${Colors.White}`,
+    "@media (max-width: 1024px)": {
+      fontSize: "4vh",
+    },
   },
 });
 

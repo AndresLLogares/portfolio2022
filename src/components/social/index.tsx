@@ -12,7 +12,7 @@ export const ContactMe = (props: any) => {
   return (
     <div className={classes.root}>
       <div className={classes.divSort}>
-        <Titles title={t("global:Titles.Recommendations")} color="Black" />
+        <Titles title={t("global:Titles.Contact")} color="Black" />
       </div>
       <div className={classes.divSort}>
         <EachSocial />
