@@ -21,6 +21,10 @@
     "Professional": "Professional Projects",
     "Live": "Live"
   },
+  "Social": {
+    "Phone": "Phone",
+    "Resume": "Resume"
+  },
   "Label": {
     "name": "Name",
     "email": "Email",

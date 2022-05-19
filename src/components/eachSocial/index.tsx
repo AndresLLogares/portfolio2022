@@ -7,9 +7,11 @@ import { Phone } from "@styled-icons/boxicons-regular/Phone";
 import { Email } from "@styled-icons/evaicons-solid/Email";
 import { Discord } from "@styled-icons/fa-brands/Discord";
 import { TextDocument } from "@styled-icons/entypo/TextDocument";
+import { useTranslation } from "react-i18next";
 
 const EachSocial = (props: any) => {
   const classes = useStyles();
+  const { t } = useTranslation("global");
 
   return (
     <div className={classes.root}>
@@ -38,7 +40,7 @@ const EachSocial = (props: any) => {
           href="https://wa.me/5491136005563"
           className={classes.button}
         >
-          Phone
+          {t("global:Social.Phone")}
           <Phone className={classes.logo} />
         </a>
         <a
@@ -65,7 +67,7 @@ const EachSocial = (props: any) => {
           href="https://drive.google.com/file/d/1jkP_jCG66JDquoF5S_2Xm7YdkRo0C2gz/view?usp=sharing"
           className={classes.button}
         >
-          Resume
+          {t("global:Social.Resume")}
           <TextDocument className={classes.logo} />
         </a>
       </div>
