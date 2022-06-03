@@ -36,7 +36,6 @@ const useStyles = makeStyles({
     "100%": {
       transform: "translateY(0) rotateX(0) scale(1)",
       transformOrigin: "50% 1400px",
-      textShadow: ` 2px 0 0  ${Colors.Red}, -2px 0 0  ${Colors.Red}, 0 2px 0  ${Colors.Red}, 0 -2px 0  ${Colors.Red}, 1px 1px  ${Colors.Red}, -1px -1px 0  ${Colors.Red}, 1px -1px 0  ${Colors.Red}, -1px 1px 0 ${Colors.Red}`,
     },
   },
   root: {
