@@ -96,7 +96,7 @@ const Navbar = () => {
             </button>
           ) : (
             <button onClick={handleDrop} className={classes.button}>
-              <Menu className={classes.logoIcon} onClick={handleDrop} />
+              <Menu className={classes.logoIcon} />
             </button>
           )}
         </Toolbar>
@@ -167,6 +167,9 @@ const useStyles = makeStyles({
       cursor: "pointer",
       backgroundColor: `${Colors.Blue} !important`,
       color: `${Colors.Black} !important`,
+    },
+    "@media (max-width: 1024px)": {
+      width: "15vw",
     },
   },
   link: {

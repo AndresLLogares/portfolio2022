@@ -9,18 +9,14 @@ const Main = () => {
   const { t } = useTranslation();
 
   return (
-    <div
-      id="Home"
-      className={classes.root}>
+    <div id="Home" className={classes.root}>
       <div className={classes.background} />
       <div className={classes.content}>
         <h1 className={classes.title}>Andrés Luis Logares</h1>
         <h2 className={classes.subTitle}>Software Developer</h2>
       </div>
       <div className={classes.divAbout}>
-        <p className={classes.textAbout}>
-        {t("global:About.text")}
-        </p>
+        <p className={classes.textAbout}>{t("global:About.text")}</p>
       </div>
     </div>
   );
@@ -40,10 +36,7 @@ const useStyles = makeStyles({
     "100%": {
       transform: "translateY(0) rotateX(0) scale(1)",
       transformOrigin: "50% 1400px",
-      textShadow: `0px 3px 0px #b2a98f,
-      0px 14px 10px rgba(0,0,0,0.15),
-      0px 24px 2px rgba(0,0,0,0.1),
-      0px 34px 30px rgba(0,0,0,0.1);`,
+      textShadow: ` 2px 0 0  ${Colors.Red}, -2px 0 0  ${Colors.Red}, 0 2px 0  ${Colors.Red}, 0 -2px 0  ${Colors.Red}, 1px 1px  ${Colors.Red}, -1px -1px 0  ${Colors.Red}, 1px -1px 0  ${Colors.Red}, -1px 1px 0 ${Colors.Red}`,
     },
   },
   root: {
@@ -71,9 +64,7 @@ const useStyles = makeStyles({
     animation: "$bg-scrolling 5s linear infinite",
     animationTimeline: "linear",
     zIndex: 0,
-    "@media (max-width: 1024px)": {
-      
-    },
+    "@media (max-width: 1024px)": {},
   },
   content: {
     display: "flex",
